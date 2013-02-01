@@ -128,6 +128,16 @@ TYPE_ID=
 
 Machine readable lower-case type information, as an example ``TYPE="Unmanned Aircraft System"`` would become ``TYPE_ID="uas"``.
 
+DRIVE=
+''''''
+
+Optional machine parsable examples include ``DRIVE="differential"``, ``DRIVE="ackermann"``, and ``DRIVE="holonomic"``.
+
+DOF=
+''''
+
+Optional number of degrees of freedom, a robot arm for example might have ``DOF=6``.
+
 MODEL=
 ''''''
 
