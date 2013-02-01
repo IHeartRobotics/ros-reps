@@ -18,7 +18,7 @@ Rationale
 
 Production robotic systems that ship with ROS pre-installed have different requirements from the needs of developers and researchers installing ROS onto a single robot or computer.
 
-Hardware vendor support staff need a way to determine information about the state of the system to speed troubleshooting. Software developers can make use of a common means of introspecting hardware to determine what functionality is available and improve the out of the box experience for user.
+Hardware vendor support staff need a way to determine information about the state of the system to speed troubleshooting. Software developers can make use of a common means of introspecting hardware to determine what functionality is available and improve the out of the box experience for users.
 
 Specification
 =============
@@ -33,7 +33,7 @@ ros-release Options
 NAME=
 '''''
 
-This is the unversioned human readable name of the robot operating system, the default is ``NAME=ROS``. Forks of ROS that patch core components of have an independent release cycle should specify a unique identifier such as ``NAME=ROS Industrial``.
+This is the unversioned human readable name of the robot operating system, the default is ``NAME=ROS``. Forks of ROS that patch core components or have an independent update and release cycle should specify a unique identifier such as ``NAME=ROS Industrial``.
 
 VERSION=
 ''''''''
@@ -63,7 +63,7 @@ These are conceptually the same as [2]_, with the defaults of ``HOME_URL="http:/
 BUILD_SOURCE=
 '''''''''''''
 
-The source of the robot operating system. Current valid values include, ``BUILD_SOURCE=deb``, ``BUILD_SOURCE=iso``, and ``BUILD_SOURCE=source``. This field along with the other ``BUILD_*`` fields should be specified by the initial install medium and should be updated when the operating system is updated.
+The machine parseable source of the robot operating system. Current valid values include, ``BUILD_SOURCE=deb``, ``BUILD_SOURCE=iso``, and ``BUILD_SOURCE=source``. This field along with the other ``BUILD_*`` fields should be specified by the initial install medium and should be updated when the operating system is updated.
 
 BUILD_DATE=
 '''''''''''''
@@ -101,7 +101,7 @@ A machine readable string containing ['a-z', 0-9, '.', '_' and '-'] that identif
 VENDOR=
 '''''''
 
-Human readable name of the hardware vendor. Hopefully this will be ``VENDOR="I Heart Engineering"``
+Human readable name of the hardware vendor. Hopefully for your robot this will be ``VENDOR="I Heart Engineering"``
 
 VENDOR_ID=
 ''''''''''
