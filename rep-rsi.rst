@@ -27,7 +27,7 @@ This REP builds on the concepts [1]_ used for Linux operating system identificat
 
 The system identification information will be stored in configuration files for ease of parsing in adverse support conditions. The files, ``/etc/ros-release`` describes the installed state of ROS and ``/etc/robot-release`` will provide information about the hardware.
 
-``/etc/ros-release`` Options
+ros-release Options
 -------
 
 NAME=
@@ -75,7 +75,7 @@ BUILD_ID=
 
 Optional human readable field to identify a specific build. This could be used to denote the source of the build ``BUILD_ID="Built by humans"`` or information to identify the release ``BUILD_ID="RC1"``
 
-``/etc/ros-release`` Options
+/etc/robot-release Options
 -------
 
 NAME=
@@ -108,11 +108,6 @@ VENDOR_ID=
 
 A machine readable string containing ['a-z', 0-9, '.', '_' and '-'] and identifies the vendor. This may be the same string used identify the vendor's ROS repository in a name such as ``ihe-ros-pkg``, which would yield ``VENDOR_ID="ihe"``.
 
-MODEL=
-''''''
-
-This is a human readable identifier to denote a specific model of a robot, and can be used to designate different feature sets. A common use of this would be to denote the difference between the research edition ``MODEL="RX"`` and the standard model ``MODEL="SX"``.
-
 PRETTY_NAME=
 ''''''''''''
 
@@ -126,9 +121,19 @@ These are conceptually the same as [2]_, the PR2 could provide something like th
 TYPE=
 '''''
 
-This describes the general class of the robot. Examples include, ``TYPE="mobile"``, ``TYPE="manipulator"``, ``TYPE="UAS"``, and ``TYPE="AUV"``.
+This describes the general class of the robot. Examples include, ``TYPE="Mobile"``, ``TYPE="Manipulator"``, ``TYPE="Unmanned Aircraft System"``, and ``TYPE="Autonomous Underwater Vehicle"``.
 
-This configuration file is meant to be forwards compatible and undefined or vendor specific options should be ignored. The TurtleBot for example may use ``TURTLEBOT_3D_SENSOR="kinect"`` and ``TURTLEBOT_3D_SENSOR="xtion"`` to optimize performance based on which sensor the robot ships with.
+TYPE_ID=
+''''''''
+
+Machine readable lower-case type information, as an example ``TYPE="Unmanned Aircraft System"`` would become ``TYPE_ID="uas"``.
+
+MODEL=
+''''''
+
+This is a human readable identifier to denote a specific model of a robot, and can be used to designate different feature sets. A common use of this would be to denote the difference between the research edition ``MODEL="RX"`` and the standard model ``MODEL="SX"``. Custom options should be used to specify each feature, such as ``TURTLEBOT_3D_SENSOR`` explained below.
+
+These configuration files are meant to be forwards compatible and undefined or vendor specific options should be ignored. The TurtleBot for example may use ``TURTLEBOT_3D_SENSOR="kinect"`` and ``TURTLEBOT_3D_SENSOR="xtion"`` to optimize performance based on which sensor the robot ships with.
 
 Future Work
 ===========
