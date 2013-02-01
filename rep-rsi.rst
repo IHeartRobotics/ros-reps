@@ -11,7 +11,9 @@ Post-History: 31-Jan-2013
 Abstract
 ========
 
-Robots with ROS installed at the system level have different requirements from users manually starting and stopping ROS and this REP describes file formats for storing information about these robotic systems. This will provide users and applications with a source of information that is common across robot hardware platforms and software installations.
+Robots with ROS installed at the system level have different requirements from users manually starting and stopping a ROS installation they built themselves. This REP describes file formats for storing information about these robotic systems. This will provide users and applications with a source of information that is common across robot hardware platforms and software installations.
+
+
 
 Rationale
 =========
